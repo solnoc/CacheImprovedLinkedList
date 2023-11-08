@@ -8,6 +8,7 @@ class linkedList
 {
 public:
     linkedList();
+    ~linkedList();
 
 public:
     struct Node
@@ -132,4 +133,9 @@ void linkedList::insertNode(Node* node, Node* previous)
     }
     node->next = previous->next;
     previous->next = node;
+}
+
+linkedList::~linkedList()
+{
+    free(start_of_buffer);
 }
